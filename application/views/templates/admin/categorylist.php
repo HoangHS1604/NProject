@@ -24,16 +24,16 @@
                         <tbody>
                         <?php foreach ($categorylist as $item) { ?>
                                 <tr role="row" class="odd">
-                                    <td scope="col"> <?= $item['category_name'] ?> </td>
-                                    <td scope="col"><?= $item['descript'] ?></td>
-                                    <td scope="col"><?php if( $item['active']=='1'){
+                                    <td scope="col"> <?= $item['c_id'] ?> </td>
+                                    <td scope="col"><?= $item['c_description'] ?></td>
+                                    <td scope="col"><?php if( $item['c_active']=='1'){
                                             echo 'Yes';
                                     } else{
                                         echo 'No';
                                     } ?></td>
-                                    <td scope="col"><a href="<?php echo base_url('admin/c_admin/updatecategory/'.$item['idc']);?>">Update</a></td>
+                                    <td scope="col"><a href="<?php echo base_url('admin/c_admin/updatecategory/'.$item['c_id']);?>">Update</a></td>
                                     <td scope="col">
-                                        <a href="<?php echo base_url('admin/c_admin/deletecategory/'.$item['idc']);?>">Delete</a></td>
+                                        <a href="<?php echo base_url('admin/c_admin/deletecategory/'.$item['c_id']);?>">Delete</a></td>
                                 </tr>
                             <?php } ?>
                             

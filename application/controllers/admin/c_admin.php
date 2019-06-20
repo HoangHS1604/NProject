@@ -3,6 +3,7 @@ class c_admin extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->load->helper(array('form', 'url'));
     }
     public function do_upload()
     { 
@@ -17,7 +18,7 @@ class c_admin extends CI_Controller {
 
         $config['upload_path'] = './public/upload/';
         $config['allowed_types'] = '*';
-        $config['max_size']     = '100';
+        $config['max_size']     = '10240';
         $config['max_width'] = '1024';
         $config['max_height'] = '768';
         $stringguid = GUID();
@@ -34,21 +35,12 @@ class c_admin extends CI_Controller {
 
         // Alternately you can set preferences by calling the ``initialize()`` method. Useful if you auto-load the class:
         $this->upload->initialize($config);
-
-        if (!$this->upload->do_upload('userfile')) {
-            $error = array('error' => $this->upload->display_errors());
-
-            $this->load->view('templates/admin/upload_form', $error);
+        if (!$this->upload->do_upload('brandlogo')) {
+            $error = $this->upload->display_errors();
+            echo $error;
         } else {
             
-            $imagename= $this->upload->data('file_name');
-               $this->load->model('admin/m_admin');
-               $this->m_admin->insertimage($imagename);
-            
-            $data = array('upload_data' => $this->upload->data());
-            
-
-            $this->load->view('templates/admin/upload_success', $data);
+            return $this->upload->data('file_name');
         }
     }
 
@@ -63,6 +55,7 @@ class c_admin extends CI_Controller {
         // $this->load->view('templates/admin/footer');
         if($this->input->post('submit') != NULL ) {
             $arr_product=$this->input->post();
+            $arr_product['image']=$this->do_upload();
            $this->load->model('admin/m_admin');
            $this->m_admin->insertbrand($arr_product);
            
@@ -137,11 +130,12 @@ class c_admin extends CI_Controller {
  public function deletecategory($id) {
     $this->load->model('admin/m_admin');
     $this->m_admin->deletecategory($id);
-    $data['categorylist']=$this->m_admin->getcategorylist();
-        $this->load->view('templates/admin/headeradminLTE');
-        $this->load->view('templates/admin/sidebarLTE');
-        $this->load->view('templates/admin/categorylist',$data);
-        $this->load->view('templates/admin/footeradminLTE');
+    $this->categorylist();
+    // $data['categorylist']=$this->m_admin->getcategorylist();
+    //     $this->load->view('templates/admin/headeradminLTE');
+    //     $this->load->view('templates/admin/sidebarLTE');
+    //     $this->load->view('templates/admin/categorylist',$data);
+    //     $this->load->view('templates/admin/footeradminLTE');
 
 }
      public function update($id){

@@ -41,7 +41,7 @@ class m_admin extends CI_Model
     
     public function getbrandlist()
     {
-        $query = $this->db->query("SELECT * FROM branding");
+        $query = $this->db->query("SELECT * FROM brand");
 
         foreach ($query->result_array() as $row) {
             return $query->result_array();
@@ -57,9 +57,9 @@ class m_admin extends CI_Model
         }
     }
     public function insertbrand($data) {
-        $sql="INSERT INTO `branding` (`idb`, `brand_name`, `brand_img`, `active`)
-        VALUES (NULL,?,NULL,1);";
-        $this->db->query($sql,array($data['BName']));
+        $sql="INSERT INTO `brand` (`b_id`, `b_name`, `b_image`, `b_active`)
+        VALUES (NULL,?,?,1);";
+        $this->db->query($sql,array($data['BName'],$data['image']));
     }
     public function insertimage($name) {
         $sql="INSERT INTO `fileupload` (`IDI`, `IName`) 
@@ -69,7 +69,7 @@ class m_admin extends CI_Model
     
     public function insertcategory($data) {
 
-        $sql="INSERT INTO `category` (`idc`, `category_name`, `id_root`,`descript`, `active`)
+        $sql="INSERT INTO `category` (`c_id`, `c_name`, `c_root_id`,`c_description`, `c_active`)
         VALUES (NULL,?,?,?,1);";
         $this->db->query($sql,array($data['CName'],$data['root'],$data['des']));
     }
@@ -79,12 +79,12 @@ class m_admin extends CI_Model
     }
     
     public function deletebrand($id) {
-        $this->db->delete('branding', array('idb' => $id)); 
+        $this->db->delete('brand', array('b_id' => $id)); 
     }
 
     
     public function deletecategory($id) {
-        $this->db->delete('category', array('idc' => $id)); 
+        $this->db->delete('category', array('c_id' => $id)); 
     }
     public function updatedata($id,$data){
         $data = array(
@@ -101,12 +101,12 @@ class m_admin extends CI_Model
 
     public function updatecategory($id,$data){
         $data = array(
-            'category_name' => $data['CName'],
-            'id_root' => $data['root'],
-            'descript' => $data['des']
+            'c_name' => $data['CName'],
+            'c_root_id' => $data['root'],
+            'c_description' => $data['des']
     );
     
-    $this->db->where('idc', $id);
+    $this->db->where('c_id', $id);
     $this->db->update('category', $data);
     }
 }

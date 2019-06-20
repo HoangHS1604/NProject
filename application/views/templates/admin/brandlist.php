@@ -24,16 +24,16 @@
                         <tbody>
                         <?php foreach ($brandlist as $item) { ?>
                                 <tr role="row" class="odd">
-                                    <td scope="col"> <?= $item['brand_name'] ?> </td>
-                                    <td scope="col"><?= $item['brand_img'] ?></td>
-                                    <td scope="col"><?php if( $item['active']=='1'){
+                                    <td scope="col"> <?= $item['b_name'] ?> </td>
+                                    <td align="center" scope="col"><img style="width: 120px;" src="<?=base_url()?>public/upload/<?= $item['b_image']?>" ></td>
+                                    <td scope="col"><?php if( $item['b_active']=='1'){
                                             echo 'Yes';
                                     } else{
                                         echo 'No';
                                     } ?></td>
-                                    <td scope="col"><a href="<?php echo base_url('admin/c_admin/update/'.$item['idb']);?>">Update</a></td>
+                                    <td scope="col"><a href="<?php echo base_url('admin/c_admin/update/'.$item['b_id']);?>">Update</a></td>
                                     <td scope="col">
-                                        <a href="<?php echo base_url('admin/c_admin/deletebrand/'.$item['idb']);?>">Delete</a></td>
+                                        <a href="<?php echo base_url('admin/c_admin/deletebrand/'.$item['b_id']);?>">Delete</a></td>
                                 </tr>
                             <?php } ?>
                             
