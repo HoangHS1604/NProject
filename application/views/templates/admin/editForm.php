@@ -54,14 +54,14 @@ if($_SESSION['check'] == 'admin'){
 
             <ul class="nav">
                 <li >
-                    <a href="?controller=admin&action=view">
+                    <a href="productlist">
                         <i class="ti-panel"></i>
-                        <p>FEATURED PRODUCTS</p>
+                        <p>Add New Product</p>
                     </a>
                 </li>
 
                 <li class="active">
-                    <a href="?controller=admin&action=productList">
+                    <a href="productlist">
                         <i class="ti-view-list-alt"></i>
                         <p>Product list</p>
                     </a>

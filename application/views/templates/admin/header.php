@@ -2,7 +2,7 @@
 <?php /* if(isset($_SESSION['check'])){
 if($_SESSION['check'] == 'admin'){*/
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
@@ -34,6 +34,10 @@ if($_SESSION['check'] == 'admin'){*/
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="<?=base_url()?>public/admin/css/themify-icons.css" rel="stylesheet">
+    <script type="text/javascript" src="<?= base_url();?>public/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="<?= base_url();?>public/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="<?= base_url();?>public/ckfinder/ckfinder.js"></script>
+</head>
 
 </head>
 <body>

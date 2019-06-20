@@ -1,8 +1,5 @@
 <div class="sidebar" data-background-color="white" data-active-color="danger">
-    <!--
-		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
-		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
-	-->
+
     <div class="sidebar-wrapper">
         <div class="logo">
             <a href="http://www.creative-tim.com" class="simple-text">
@@ -12,14 +9,14 @@
 
         <ul class="nav">
             <li>
-                <a href="?controller=admin&action=view">
+                <a href="<?php echo base_url('admin/c_admin/insert');?>">
                     <i class="ti-panel"></i>
-                    <p>FEATURED PRODUCTS</p>
+                    <p>Add New Product</p>
                 </a>
             </li>
 
             <li class="active">
-                <a href="?controller=admin&action=productList">
+                <a href="<?php echo base_url('admin/c_admin/productlist');?>">
                     <i class="ti-view-list-alt"></i>
                     <p>Product list</p>
                 </a>
@@ -126,13 +123,17 @@
                                     <th scope="col"><?= $item['Price'] ?></th>
                                     <th scope="col"><?= $item['description'] ?></th>
                                     <th scope="col"><?= $item['content'] ?></th>
-                                    <th scope="col"><?= $item['Img'] ?></th>
+                                    <th scope="col"><img src="<?= base_url()?>public/home/images/featured products/<?= $item['Img'] ?>" width="250" height="200"><?= $item['Img'] ?></th>
                                     <th scope="col"><?= $item['created_date'] ?></th>
+                                    
+                                    <th scope="col"><a href="<?php echo base_url('admin/c_admin/update/'.$item['Id_FProducts']);?>">Sửa</a></th>
+                                    <th scope="col">
+                                        <a href="<?php echo base_url('admin/c_admin/delete/'.$item['Id_FProducts']);?>">Xóa</a></th>
                                 </tr>
                             <?php } ?>
                         </thead>
                         <tbody>
-                            <?php if (isset($result)) : foreach ($result as $value) : ?>
+                            <!-- <?php if (isset($result)) : foreach ($result as $value) : ?>
                                     <tr>
                                         <th scope="row"><?php echo $value[0]; ?></th>
                                         <td><?php echo $value[1]; ?></td>
@@ -145,7 +146,7 @@
                                         <td><a href="?controller=admin&action=delete&id=<?php echo $value[0]; ?>">Xóa</a></td>
                                     </tr>
                                 <?php endforeach;
-                        endif; ?>
+                        endif; ?> -->
                         </tbody>
                     </table>
 
