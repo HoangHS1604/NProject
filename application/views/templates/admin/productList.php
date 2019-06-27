@@ -1,3 +1,7 @@
+<?php 
+    $this->load->view('templates/admin/header');
+    $this->load->view('templates/admin/sidebar');
+?>
 <div class="sidebar" data-background-color="white" data-active-color="danger">
 
     <div class="sidebar-wrapper">
@@ -111,7 +115,6 @@
                                 <th scope="col">Title</th>
                                 <th scope="col">Giá</th>
                                 <th scope="col">Mô tả</th>
-                                <th scope="col">Content</th>
                                 <th scope="col">Hình ảnh</th>
                                 <th scope="col">Ngày tạo</th>
                                 <th scope="col">Sửa</th>
@@ -119,11 +122,10 @@
                             </tr>
                             <?php foreach ($productlist as $item) { ?>
                                 <tr>
-                                    <th scope="col"> <?= $item['Title'] ?> </th>
-                                    <th scope="col"><?= $item['Price'] ?></th>
-                                    <th scope="col"><?= $item['description'] ?></th>
-                                    <th scope="col"><?= $item['content'] ?></th>
-                                    <th scope="col"><img src="<?= base_url()?>public/home/images/featured products/<?= $item['Img'] ?>" width="250" height="200"><?= $item['Img'] ?></th>
+                                    <th scope="col"> <?= $item['p_name'] ?> </th>
+                                    <th scope="col"><?= $item['p_price'] ?></th>
+                                    <th scope="col"><?= $item['p_description'] ?></th>
+
                                     <th scope="col"><?= $item['created_date'] ?></th>
                                     
                                     <th scope="col"><a href="<?php echo base_url('admin/c_admin/update/'.$item['Id_FProducts']);?>">Sửa</a></th>
@@ -188,3 +190,6 @@
             </footer>
 
         </div>
+<?php 
+$this->load->view('templates/admin/footer'); 
+ ?>

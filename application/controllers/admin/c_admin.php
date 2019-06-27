@@ -119,6 +119,7 @@ class c_admin extends CI_Controller
     {
         $this->load->model('admin/m_admin');
         $data['productlist']=$this->m_admin->getproductlist();
+        $data['product_image']=$this->m_admin->getproductlist();
         $this->load->view('templates/admin/productlist',$data);
     }
     public function login()

@@ -48,7 +48,7 @@ class m_admin extends CI_Model
         $this->db->query($sql,array($data['CName'],$data['root'],$data['des']));
     }
     public function insertproduct($data) {
-        $sql="INSERT INTO product (p_id, p_name, p_description, p_price) VALUES (NULL,?,?,?);";
+        $sql="INSERT INTO product (p_id, p_name, p_description, p_price, p_createdday) VALUES (NULL,?,?,?, CURRENT_TIMESTAMP);";
         $this->db->query($sql,array($data['title'],$data['des'],$data['price']));
         $sql="INSERT INTO product_image (pi_name) VALUES (?);";
         $this->db->query($sql, array($data['image']));
