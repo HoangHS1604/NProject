@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Home</title>
+	<title>COZA</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -39,7 +39,7 @@
 <body class="animsition">
 	
 	<!-- Header -->
-	<header>
+	<header class="header-v4">
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
 			<!-- Topbar -->
@@ -69,7 +69,7 @@
 				</div>
 			</div>
 
-			<div class="wrap-menu-desktop">
+			<div class="wrap-menu-desktop how-shadow1">
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
@@ -80,7 +80,7 @@
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<li class="active-menu">
+							<li>
 								<a href="index.html">Home</a>
 								<ul class="sub-menu">
 									<li><a href="index.html">Homepage 1</a></li>
@@ -89,7 +89,7 @@
 								</ul>
 							</li>
 
-							<li>
+							<li class="active-menu">
 								<a href="product.html">Shop</a>
 							</li>
 
@@ -121,7 +121,7 @@
 							<i class="zmdi zmdi-shopping-cart"></i>
 						</div>
 
-						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+						<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
 					</div>

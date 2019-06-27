@@ -16,5 +16,11 @@ class c_client extends CI_Controller {
         $this->load->view('templates/client/product');
         $this->load->view('templates/client/footer');
     }
+    public function product_detail()
+    {
+        $this->load->view('templates/client/header');
+        $this->load->view('templates/client/product_detail');
+        $this->load->view('templates/client/footer');
+    }
 }
 ?>
