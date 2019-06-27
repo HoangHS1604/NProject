@@ -34,5 +34,9 @@ class c_client extends CI_Controller {
         $this->load->view('templates/client/contact');
         $this->load->view('templates/client/footer');
     }
+    public function register()
+    {
+        $this->load->view('templates/client/register');
+    }
 }
 ?>
