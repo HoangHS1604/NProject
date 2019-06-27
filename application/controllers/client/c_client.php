@@ -22,5 +22,17 @@ class c_client extends CI_Controller {
         $this->load->view('templates/client/product_detail');
         $this->load->view('templates/client/footer');
     }
+    public function shopping_cart()
+    {
+        $this->load->view('templates/client/header');
+        $this->load->view('templates/client/shopping_cart');
+        $this->load->view('templates/client/footer');
+    }
+    public function contact()
+    {
+        $this->load->view('templates/client/header');
+        $this->load->view('templates/client/contact');
+        $this->load->view('templates/client/footer');
+    }
 }
 ?>
